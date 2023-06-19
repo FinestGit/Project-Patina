@@ -47,12 +47,13 @@ const InputComponent: React.FC<InputComponentProperties> = ({
   };
 
   return (
-    <div className={`input-component-container ${additionalClassName}`}>
+    <div className="input-component-container">
       <label htmlFor={labelInputIdentifier}>{label}</label>
       <input
         id={labelInputIdentifier}
         type={type}
         value={displayValue}
+        className={`${additionalClassName}`}
         placeholder={placeholderExample}
         onChange={(event) => handleOnChange(event)}
         onBlur={handleBlur}

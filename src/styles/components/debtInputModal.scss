@@ -18,6 +18,12 @@
   max-width: 90%;
 }
 
+.modal-button-container {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
 .modal-open {
   animation: modalOpen 0.5s forwards;
 }
