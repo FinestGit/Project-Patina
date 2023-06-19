@@ -1,10 +1,16 @@
 import React from "react";
 import "../styles/components/inputComponent.scss";
-
+import { ClampHook } from "../models/types/ClampHook";
 interface InputComponentProperties<T> {
   value: T;
-  // eslint-disable-next-line no-unused-vars, no-undef
-  changeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  changeHandler: (
+    // eslint-disable-next-line no-unused-vars, no-undef
+    event: React.ChangeEvent<HTMLInputElement>,
+    // eslint-disable-next-line no-unused-vars
+    clampHook: ClampHook<T>
+  ) => void;
+  // eslint-disable-next-line no-unused-vars
+  clampHook: ClampHook<T>;
 }
 
 type GenericFC<T> = React.FC<InputComponentProperties<T>>;
@@ -12,9 +18,14 @@ type GenericFC<T> = React.FC<InputComponentProperties<T>>;
 const InputComponent: GenericFC<any> = ({
   value,
   changeHandler,
+  clampHook,
 }): React.ReactElement => {
   return (
-    <input value={value} onChange={(event) => changeHandler(event)}></input>
+    <input
+      type="text"
+      value={value}
+      onChange={(event) => changeHandler(event, clampHook(event.target.value))}
+    />
   );
 };
 
