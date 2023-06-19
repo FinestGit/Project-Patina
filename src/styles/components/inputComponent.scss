@@ -1,0 +1,21 @@
+@import "../colors";
+
+input {
+  background: $primary-color;
+  color: $dark-tone;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  border: $dark-tone 1px solid;
+  transition: background-color 0.2s ease-out, transform 0.2s ease-out;
+  $width: 15rem;
+  $height: 1.5rem;
+  width: $width;
+  height: $height;
+
+  &:focus {
+    background: $secondary-color;
+    transform: translate(calc(#{$width} * 0.06), calc(#{$height} * 0.1))
+      scale(1.1);
+    color: white;
+  }
+}
