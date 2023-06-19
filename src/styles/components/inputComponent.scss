@@ -1,0 +1,13 @@
+.input-component-container {
+  label {
+    display: block;
+    margin-left: 10px;
+    transition: font-size 0.3s ease-out;
+  }
+
+  input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+}
